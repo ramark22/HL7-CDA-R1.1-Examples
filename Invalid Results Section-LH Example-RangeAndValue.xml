@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+****
+**** Incorrectly indicated Results Section with a LH result.
+*****The range and value is indicated in the ST data type as a string value.
+****
+-->
+<component>
+    <section>
+        <!-- Results Section with Coded Entries Required-->
+        <templateId root="2.16.840.1.113883.10.20.22.2.3.1"/>
+        <code code="30954-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Relevant diagnostic tests and/or laboratory data"/>
+        <title>Results - Incorrectly Indicated LH Example (Range and Value in ST data type)</title>
+        <text>
+            <table>
+                <thead>
+                    <tr>
+					  <th>Date</th>
+					  <th>Name</th>
+					  <th>Value</th>
+					  <th>Unit</th>
+					  <th>Range</th>
+					  <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+					  <td>2015/03/26</td>
+					  <td ID="Result1">LH</td>
+					  <td>&lt;0.2 mIU/mL</td>
+					  <td>mIU/mL</td>
+					  <td ID="Result1Range">
+					  Male : 	  	 
+  (18-59 Years) 	1.5-9.3 	mIU/mL
+  (&#8805;60 Years) 	1.6-15.2 	mIU/mL
+Female : 	  	 
+  (Follicular Phase) 	1.9-12.5 	mIU/mL
+  (Mid-Cycle Peak) 	8.7-76.3 	mIU/mL
+  (Luteal Phase) 	0.5-16.9 	mIU/mL
+  (Postmenopausal) 	10.0-54.7 	mIU/mL
+					  </td>
+                      <td>Lutropin - Serum/Plasma</td>
+                    </tr>
+                </tbody>
+            </table>
+        </text>
+        <entry typeCode="DRIV">
+            <organizer classCode="BATTERY" moodCode="EVN">
+                <templateId root="2.16.840.1.113883.10.20.22.4.1"/>
+                <id root="9DFF4B72-E8FE-11E4-B48A-460231621F93"/>
+                <!-- This code specifies battery test type -->
+                <code code="10501-5" codeSystem="2.16.840.1.113883.6.1"
+                    codeSystemName="LOINC" displayName="Lutropin - Serum/Plasma"/>
+                <statusCode code="completed"/>
+                <!-- Typically more than one component would be present - only one present in test data -->
+                <component>
+                    <observation classCode="OBS" moodCode="EVN">
+                        <templateId root="2.16.840.1.113883.10.20.22.4.2"/>
+                        <id root="9DFF4B72-E8FE-11E4-B48A-460231621F94"/>
+                        <code code="10501-5" codeSystem="2.16.840.1.113883.6.1"
+                            codeSystemName="LOINC" displayName="Lutropin - Serum/Plasma">
+                        </code>
+                        <text>
+                            <reference value="#Result1"/>
+                        </text>
+                        <statusCode code="completed"/>
+					    <effectiveTime>
+						  <low value="20150326105353-0400" />
+						  <high value="20150326105353-0400" />
+					    </effectiveTime>
+					   <!-- NOTE that the results are denoted in the ST type instead of IVL_PQ data type -->
+                       <value xsi:type="ST">&lt;0.2 mIU/mL</value>
+                        <interpretationCode code="A" codeSystem="2.16.840.1.113883.5.83"/>
+                        <referenceRange>
+                            <observationRange>
+                                <text>
+									<reference value="#Result1Range"/>
+								</text>
+                            </observationRange>
+                        </referenceRange>
+                    </observation>
+                </component>
+            </organizer>
+        </entry>
+    </section>
+</component>			
