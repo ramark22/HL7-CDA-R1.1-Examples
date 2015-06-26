@@ -61,7 +61,7 @@
 					    </effectiveTime>
 						
 					   <!-- NOTE that the results are denoted in the ST type instead of PQ data type -->
-                       <value xsi:type="ST">29.6 %</value>
+						<value xsi:type="ST">29.6 %</value>
 					   
 					   <!---------------------------------------
 					    If the value was to be coded correctly,this value should appear 

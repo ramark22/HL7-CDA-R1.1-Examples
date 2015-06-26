@@ -69,7 +69,7 @@ Female :
 						  <high value="20150326105353-0400" />
 					    </effectiveTime>
 					   <!-- NOTE that the results are denoted in the ST type instead of IVL_PQ data type -->
-                       <value xsi:type="ST">&lt;0.2 mIU/mL</value>
+						<value xsi:type="ST">&lt;0.2 mIU/mL</value>
 					<!---------------------------------------
 					    If the value was to be coded correctly,this value should appear 
 					   as recommended here below.
@@ -86,7 +86,7 @@ Female :
 					   // Case#2 - To indicate the result value less than 0.2, 
 					      but to any possible lower bound. Typically it could be any number, lower than 0.
 
-						  <value xsi:type="IVL_PQ">
+					   <value xsi:type="IVL_PQ">
 						 <low nullFlavor = "NINF"/>     // If this value can go well below 0
 						 <high value="0.2" unit="mIU/mL"/> // The highest value in this range
 					   </value>
