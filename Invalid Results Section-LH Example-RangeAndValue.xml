@@ -10,7 +10,7 @@
         <!-- Results Section with Coded Entries Required-->
         <templateId root="2.16.840.1.113883.10.20.22.2.3.1"/>
         <code code="30954-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Relevant diagnostic tests and/or laboratory data"/>
-        <title>Results - Incorrectly Indicated LH Example (Range and Value in ST data type)</title>
+        <title>Results - Incorrectly Coded LH Example (Range and Value in ST data type)</title>
         <text>
             <table>
                 <thead>
@@ -70,6 +70,28 @@ Female :
 					    </effectiveTime>
 					   <!-- NOTE that the results are denoted in the ST type instead of IVL_PQ data type -->
                        <value xsi:type="ST">&lt;0.2 mIU/mL</value>
+					<!---------------------------------------
+					    If the value was to be coded correctly,this value should appear 
+					   as recommended here below.
+					   
+					   // To indicate that a value less than 0.2 units, there are 2 possible cases..
+
+					   // Case#1 - To indicate the result value to be between 0 and 0.2
+
+					   <value xsi:type="IVL_PQ">
+						 <low value="0" unit="mIU/mL"/>
+						 <high value="0.2" unit="mIU/mL"/> // The highest value in this range
+					   </value>
+					   
+					   // Case#2 - To indicate the result value less than 0.2, 
+					      but to any possible lower bound. Typically it could be any number, lower than 0.
+
+						  <value xsi:type="IVL_PQ">
+						 <low nullFlavor = "NINF"/>     // If this value can go well below 0
+						 <high value="0.2" unit="mIU/mL"/> // The highest value in this range
+					   </value>
+					   ---------------------------------------->
+					   
                         <interpretationCode code="A" codeSystem="2.16.840.1.113883.5.83"/>
                         <referenceRange>
                             <observationRange>
